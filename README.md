@@ -1,6 +1,6 @@
 # Restroworks Chatbot
 
-Welcome to the Restroworks Chatbot project! This chatbot is designed to provide information about Restroworks services and assist users with their queries.
+Welcome to the Restroworks Chatbot project! This chatbot is designed to provide information about Restroworks services and assist users with their queries. You can visit the live application [restroworks-chatbot.vercel.app](https://restroworks-chatbot.vercel.app/).
 
 ## Project Overview
 
@@ -42,7 +42,7 @@ Follow these steps to get the project up and running locally:
 4. **Set up environment variables:**
     Create a `.env` file in the root directory and add your Google Generative AI API key:
     ```env
-    GOOGLE_GENERATIVEAI_API_KEY=your_api_key_here
+    GEMINI_API_KEY=your_api_key_here
     ```
 
 5. **Run the application:**
@@ -57,8 +57,7 @@ Follow these steps to get the project up and running locally:
 
 ## Deployment on Vercel
 
-The project is deployed on Vercel. You can visit the live application [here](https://restroworks-chatbot.vercel.app/).
-
+The project is deployed on Vercel. You can visit the live application [restroworks-chatbot.vercel.app](https://restroworks-chatbot.vercel.app/).
 
 ## Usage
 
