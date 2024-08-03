@@ -63,11 +63,8 @@
         padding: 10px;
         background-color: #ffffff;
         border: 0px solid #ccc;
-        border-radius: 15px;
-        overflow: auto; /* Allows scrolling but hides scroll bars */
-      }
-      #messages::-webkit-scrollbar {
-        display: none; /* Hides scroll bar in WebKit-based browsers */
+        overflow-y: scroll;
+        scrollbar-width: thin;
       }
       .message {
         display: flex;
