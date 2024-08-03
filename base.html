@@ -770,6 +770,9 @@
         });
 
       function toggleChat() {
+        var chatbotSound = new Audio("./assets/audio/chatbotButtonSound.mp3");
+        chatbotSound.play()
+
         const chatContainer = document.getElementById("chat1");
         if (
           chatContainer.style.display === "none" ||
