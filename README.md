@@ -16,7 +16,6 @@ This project is a full-stack application created to demonstrate my skills in bui
 - **EJS**: Embedded JavaScript templating.
 - **Google Generative AI**: Provides the intelligence behind the chatbot.
 - **Render**: Hosting platform for the deployed application.
-- **Vercel (optional)**: Initial deployment attempt before switching to Render.
 
 ## Project Structure
 ```
