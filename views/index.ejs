@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Restroworks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/webpageStyle.css">  
+    <link rel="stylesheet" href="/style.css">  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <%- include('webpage.ejs') %>
+    <button class="chatbot-toggler">💬</button>
+    <div class="chatbot">
+        <header>
+            <h2>Chatbot</h2>
+        </header>
+        <ul class="chatbox">
+            <li class="chat ingoing">
+                <span>
+                    <img src="/assets/images/restroworks-icon.png" alt="Restroworks icon" height="40px">
+                </span>
+                <p>Hi there👋<br>How can Restroworks help you today?</p>
+            </li>
+        </ul>
+        <div class="chat-input">
+            <textarea placeholder="Enter a message..."></textarea>
+            <span id="send-btn" class="material-symbols-outlined">send</span>
+        </div>
+    </div>
+    <script src="/behavior.js" charset="utf-8"></script>
+</body>
+</html>

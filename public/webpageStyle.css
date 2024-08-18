@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'Agraham';
+    src: url('./assets/fonts/Agraham.otf');
+}
+
+h1 {
+    font-family: 'Agraham', sans-serif;
+}
+
+
+#container {
+    display: grid;
+    gap: 1rem;
+    height: 100vh;
+    grid-template-rows: 100px 200rem 100px;
+    grid-template-columns: 0.9fr repeat(2, 1fr);
+    grid-template-areas:
+        "header header header"
+        "sidebar main-content main-content"
+        "footer footer footer";
+}
+
+
+#header {
+    background-color: #D0B8A8;
+    grid-area: header;
+}
+
+#sidebar {
+    background-color: #DFD3C3;
+    grid-area: sidebar;
+}
+
+#main-content {
+    background-color: #F8EDE3;
+    grid-area: main-content;
+}
+
+#footer {
+    background-color: #8D493A;
+    grid-area: footer;
+    color: #F8EDE3;
+    display: flex;
+    justify-content: center;
+}
+
+.border {
+    border: 2px solid black;
+}
