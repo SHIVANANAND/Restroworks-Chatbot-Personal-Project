@@ -1,7 +1,8 @@
-import bodyParser from "body-parser";
+import { GoogleGenerativeAI } from "@google/generative-ai";
+import dotenv from 'dotenv';
+dotenv.config();
 import express from "express";
-import loadChatbotModel from "./imports-and-load-chatbot-model.js";
-import handleChatRequest from "./post-request-for-chat-bot.js";
+import bodyParser from "body-parser";
 
 const app = express();
 const port = 3000;
@@ -11,14 +12,37 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set("view engine", "ejs");
 
-const { model, chatHistory } = loadChatbotModel();
+const apiKey = process.env.GEMINI_API_KEY;
+const genAI = new GoogleGenerativeAI(apiKey);
 
-app.get("/", function(req, res) {
-    res.render("index");
-})
+const model = genAI.getGenerativeModel({
+  model: "gemini-1.5-flash",
+});
 
-app.post("/", (req, res) => handleChatRequest(req, res, model, chatHistory));
+const chatHistory = []; // Store conversation history
 
-app.listen(port, function() {
-    console.log(`Listening on port ${port}`);
-})
+app.get("/", (req, res) => {
+  res.render("index");
+});
+
+app.post("/", async (req, res) => {
+  const userInput = req.body.userInput;
+
+  // Start a chat session and send the message
+  const chatSession = model.startChat({
+    history: chatHistory,
+  });
+  const result = await chatSession.sendMessage(userInput);
+  const botResponse = result.response.text();
+
+  // Add responses to the history
+  chatHistory.push({ role: "user", parts: [{ text: userInput }] });
+  chatHistory.push({ role: "model", parts: [{ text: botResponse }] });
+
+  // Render the bot response in the view
+  res.json({ botResponse: botResponse });
+});
+
+app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
+});
