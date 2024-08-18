@@ -22,8 +22,7 @@ const model = genAI.getGenerativeModel({
 const chatHistory = []; // Store conversation history
 
 app.get("/", (req, res) => {
-  // res.render("index");
-  res.send("server is working");
+  res.render("index.ejs");
 });
 
 app.post("/", async (req, res) => {
