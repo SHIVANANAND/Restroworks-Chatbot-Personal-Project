@@ -35,7 +35,6 @@ This project is a full-stack application created to demonstrate my skills in bui
 ├── index.js
 ├── package.json
 ├── post-request-for-chat-bot.js
-├── vercel.json (optional)
 └── README.md
 ```
 
